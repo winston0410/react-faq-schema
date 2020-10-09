@@ -3,8 +3,9 @@ const {
   safeMap
 } = require('../output/Helper/index.js')
 
+function Faq ({ faqs = [], attr }) {
+  console.log(faqs)
 
-function Faq ({ faqs, attr }) {
   const faqArray = safeMap(
     ({
       question,
