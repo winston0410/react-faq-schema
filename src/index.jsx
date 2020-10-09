@@ -4,9 +4,13 @@ const {
   safeMap
 } = require('../output/Helper/index.js')
 
-function Faq ({ faqs = [], attr }) {
-  console.log(faqs)
+const defaultAttr = {
+  Container: {},
+  Question: {},
+  Answer: {}
+}
 
+function Faq ({ faqs = [], attr = defaultAttr }) {
   const faqArray = safeMap(
     ({
       question,
@@ -18,7 +22,7 @@ function Faq ({ faqs = [], attr }) {
   )
 
   return (
-    <div itemscope="itemscope" itemtype="https://schema.org/FAQPage" {...attr.Container}>
+    <div itemScope="itemscope" itemType="https://schema.org/FAQPage" {...attr.Container}>
       {faqArray}
     </div>
   )

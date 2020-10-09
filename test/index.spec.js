@@ -19,9 +19,12 @@ afterEach(function () {
 
 describe('FAQ Component Testing', function () {
   it('should not fail if no data is passed int as question', function () {
-    act(() => {
-      ReactDOM.render(<Faq />, rootContainer)
-    })
+    // act(() => {
+    //   ReactDOM.render(<Faq />, rootContainer)
+    // })
+
+    ReactDOM.render(<Faq />, rootContainer)
+
     // const h1 = rootContainer.querySelector('h1')
     // expect(h1.textContent).to.equal('Hello World')
   })
