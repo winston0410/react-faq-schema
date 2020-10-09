@@ -52,7 +52,7 @@ npm i react-faq-schema
 
 ### `props.faqs` : Array Object
 
-An array of objects of questions and answers. Each object should have the following properties:
+An array of objects of questions and answers. Default to `[]`. Each object should have the following properties:
 
 #### `props.question` : String
 
