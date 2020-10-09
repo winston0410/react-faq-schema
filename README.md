@@ -4,6 +4,44 @@
 
 A React component that gives you a FAQ section with Microdata markup, so that you can enjoy better SEO performance.
 
+```javascript
+//Use this as a component in your application
+<Faq
+  faqs={[
+    {
+      question: 'Hello',
+      answer: 'World'
+    }
+  ]}
+  attr={{
+    Container: {
+      id: 'testId',
+      className: 'class0'
+    },
+    Question: {
+      id: 'testId1',
+      className: 'class1'
+    },
+    Answer: {
+      className: 'class2'
+    }
+  }}
+/>
+```
+
+```html
+//Result
+<div id="testId1" class="class1" itemprop="mainEntity" itemscope="itemscope" itemtype="https://schema.org/Question">
+
+  <p itemprop="name">Hello</p>
+
+  <div class="class2" itemprop="acceptedAnswer" itemscope="itemscope" itemtype="https://schema.org/Answer">
+
+  <div itemprop="text">World</div>
+</div>
+</div>
+```
+
 ## Installation
 
 ```
@@ -12,4 +50,43 @@ npm i react-faq-schema
 
 ## API Reference
 
-TODO
+### `props.faqs` : Array Object
+
+An array of objects of questions and answers. Each object should have the following properties:
+
+#### `props.question` : String
+
+The question of that Question.
+
+#### `props.answer` : String
+
+The answer of that Question.
+
+### `props.attr` : Object
+
+An object that contains attribute for each HTML tag.
+
+This object has the following nested objects. Keys in these objects will be used as the attribute name and values will be used as the attribute value.
+
+For example:
+
+```javascript
+{
+  Container: {
+    id: 'test1',
+    className: 'class0'
+  }
+}
+```
+
+This will generate attribute `id` with `'test1'` as value, and `className` with `'class0'` as value.
+
+#### `props.attr.Container` : Object
+
+#### `props.attr.Question` : Object
+
+#### `props.attr.QuestionText` : Object
+
+#### `props.attr.Answer` : Object
+
+#### `props.attr.AnswerText` : Object
