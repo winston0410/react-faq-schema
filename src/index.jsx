@@ -1,3 +1,4 @@
+import React from 'react'
 import Question from './partials/Question.jsx'
 const {
   safeMap
