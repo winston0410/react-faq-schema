@@ -1,13 +1,16 @@
 import Answer from './Answer.jsx'
 
-function Question ({ question, answer, attr }) {
+function Question ({ question, answer, attr, tagName }) {
+  const TagName = tagName.Question.tagName
+  const TextTagName = tagName.QuestionText.tagName
+
   return (
-    <div {...attr.Question} itemProp="mainEntity" itemScope="itemscope" itemType="https://schema.org/Question">
-      <p {...attr.QuestionText} itemProp="name">
+    <TagName {...attr.Question} itemProp="mainEntity" itemScope="itemscope" itemType="https://schema.org/Question">
+      <TextTagName {...attr.QuestionText} itemProp="name">
         {question}
-      </p>
-      <Answer answer={answer} attr={attr} />
-    </div>
+      </TextTagName>
+      <Answer answer={answer} attr={attr} tagName={tagName}/>
+    </TagName>
   )
 }
 

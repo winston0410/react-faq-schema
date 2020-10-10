@@ -1,12 +1,15 @@
-function Answer ({ answer, attr }) {
+function Answer ({ answer, attr, tagName }) {
+  const TagName = tagName.Answer.tagName
+  const TextTagName = tagName.AnswerText.tagName
+
   return (
-    <div {...attr.Answer} itemProp="acceptedAnswer" itemScope="itemscope" itemType="https://schema.org/Answer">
+    <TagName {...attr.Answer} itemProp="acceptedAnswer" itemScope="itemscope" itemType="https://schema.org/Answer">
 
-      <div {...attr.AnswerText} itemProp="text">
+      <TextTagName {...attr.AnswerText} itemProp="text">
         {answer}
-      </div>
+      </TextTagName>
 
-    </div>
+    </TagName>
   )
 }
 

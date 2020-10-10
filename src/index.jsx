@@ -10,21 +10,41 @@ const defaultAttr = {
   Answer: {}
 }
 
-function Faq ({ faqs = [], attr = defaultAttr }) {
+const defaultTag = {
+  Container: {
+    tagName: 'div'
+  },
+  Question: {
+    tagName: 'div'
+  },
+  QuestionText: {
+    tagName: 'p'
+  },
+  Answer: {
+    tagName: 'div'
+  },
+  AnswerText: {
+    tagName: 'p'
+  }
+}
+
+function Faq ({ faqs = [], attr = defaultAttr, tagName = defaultTag }) {
   const faqArray = safeMap(
     ({
       question,
       answer
     }) =>
-      <Question question={question} answer={answer} attr={attr}/>
+      <Question question={question} answer={answer} attr={attr} tagName={tagName}/>
   )(
     faqs
   )
 
+  const TagName = tagName.Container.tagName
+
   return (
-    <div itemScope="itemscope" itemType="https://schema.org/FAQPage" {...attr.Container}>
+    <TagName itemScope="itemscope" itemType="https://schema.org/FAQPage" {...attr.Container}>
       {faqArray}
-    </div>
+    </TagName>
   )
 }
 
