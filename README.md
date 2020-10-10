@@ -42,6 +42,14 @@ A React component that gives you a FAQ section with Microdata markup, so that yo
 </div>
 ```
 
+## Features
+
+- :rocket: Extremely lightweight
+
+- :nail_care: No predefined styling for minimum component size
+
+- :wrench: From tag name to attribute, everything is extensible
+
 ## Installation
 
 ```
