@@ -1,8 +1,10 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
 import { act } from 'react-dom/test-utils'
-import { expect } from 'chai'
 import Faq from '../src/index.jsx'
+const chai = require('chai')
+const expect = chai.expect
+chai.use(require('chai-dom'))
 require('global-jsdom')()
 
 let rootContainer
@@ -19,13 +21,11 @@ afterEach(function () {
 
 describe('FAQ Component Testing', function () {
   it('should not fail if no data is passed int as question', function () {
-    // act(() => {
-    //   ReactDOM.render(<Faq />, rootContainer)
-    // })
-
     ReactDOM.render(<Faq />, rootContainer)
 
-    // const h1 = rootContainer.querySelector('h1')
-    // expect(h1.textContent).to.equal('Hello World')
+    const renderedBlock = rootContainer.querySelector('div')
+
+    expect(renderedBlock).to.have.attribute('itemtype', 'https://schema.org/FAQPage')
+    expect(renderedBlock).to.have.attribute('itemscope', '')
   })
 })
