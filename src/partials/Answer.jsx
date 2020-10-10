@@ -1,3 +1,5 @@
+import React from 'react'
+
 function Answer ({ answer, attr, tagName }) {
   const TagName = tagName.Answer.tagName
   const TextTagName = tagName.AnswerText.tagName

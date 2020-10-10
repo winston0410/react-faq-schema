@@ -1,3 +1,4 @@
+import React from 'react'
 import Answer from './Answer.jsx'
 
 function Question ({ question, answer, attr, tagName }) {
