@@ -1,6 +1,6 @@
 {
   "name": "react-faq-schema",
-  "version": "1.0.1",
+  "version": "1.1.0",
   "description": "A React component that gives you a FAQ section with Microdata markup, so that you can enjoy better SEO performance",
   "main": "./dist.index.esm.js",
   "files": [
