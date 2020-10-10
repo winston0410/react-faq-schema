@@ -26,6 +26,23 @@ A React component that gives you a FAQ section with Microdata markup, so that yo
       className: 'class2'
     }
   }}
+  tagName={{
+    Container: {
+      tagName: 'div'
+    },
+    Question: {
+      tagName: 'div'
+    },
+    QuestionText: {
+      tagName: 'p'
+    },
+    Answer: {
+      tagName: 'div'
+    },
+    AnswerText: {
+      tagName: 'p'
+    }
+  }}
 />
 ```
 
@@ -37,7 +54,7 @@ A React component that gives you a FAQ section with Microdata markup, so that yo
 
   <div class="class2" itemprop="acceptedAnswer" itemscope="itemscope" itemtype="https://schema.org/Answer">
 
-  <div itemprop="text">World</div>
+  <p itemprop="text">World</p>
 </div>
 </div>
 ```
@@ -74,17 +91,22 @@ The answer of that Question.
 
 An object that contains attribute for each HTML tag.
 
-This object has the following nested objects. Keys in these objects will be used as the attribute name and values will be used as the attribute value.
-
-For example:
+This object has the following nested objects. Keys in these objects will be used as the attribute name and values will be used as the attribute value. You can add whatever you want.
 
 ```javascript
-{
+attr={{
   Container: {
-    id: 'test1',
+    id: 'testId',
     className: 'class0'
+  },
+  Question: {
+    id: 'testId1',
+    className: 'class1'
+  },
+  Answer: {
+    className: 'class2'
   }
-}
+}}
 ```
 
 This will generate attribute `id` with `'test1'` as value, and `className` with `'class0'` as value.
@@ -98,3 +120,27 @@ This will generate attribute `id` with `'test1'` as value, and `className` with 
 #### `props.attr.Answer` : Object
 
 #### `props.attr.AnswerText` : Object
+
+### `props.tagName` : Object
+
+An object that contains tagName for each HTML tag.
+
+```javascript
+tagName={{
+  Container: {
+    tagName: 'div'
+  },
+  Question: {
+    tagName: 'div'
+  },
+  QuestionText: {
+    tagName: 'p'
+  },
+  Answer: {
+    tagName: 'div'
+  },
+  AnswerText: {
+    tagName: 'p'
+  }
+}}
+```
