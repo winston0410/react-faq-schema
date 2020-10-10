@@ -34,7 +34,7 @@ function Faq ({ faqs = [], attr = defaultAttr, tagName = defaultTag }) {
       question,
       answer
     }) =>
-      <Question question={question} answer={answer} attr={attr} tagName={tagName}/>
+      <Question question={question} answer={answer} attr={attr} tagName={tagName} key={question}/>
   )(
     faqs
   )
