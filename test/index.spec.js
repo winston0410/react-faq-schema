@@ -21,9 +21,16 @@ afterEach(function () {
 
 describe('FAQ Component Testing', function () {
   it('should not fail if no data is passed int as question', function () {
-    ReactDOM.render(<Faq />, rootContainer)
+    ReactDOM.render(<Faq faqs={[
+      {
+        question: 'Hello',
+        answer: 'World'
+      }
+    ]}/>, rootContainer)
 
     const renderedBlock = rootContainer.querySelector('div')
+
+    // console.log(renderedBlock)
 
     expect(renderedBlock).to.have.attribute('itemtype', 'https://schema.org/FAQPage')
     expect(renderedBlock).to.have.attribute('itemscope', '')
